@@ -1,10 +1,16 @@
 import React from 'react';
-import './App.css';
+import TodoInput from './components/TodoInput';
+import TodoList from './components/TodoList';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import uuid from 'uuid';
+
 
 function App() {
   return (
-    <div className="App">
-      lets get started
+    <div className='App'>
+      <TodoInput />
+      <TodoList />
     </div>
   );
 }
