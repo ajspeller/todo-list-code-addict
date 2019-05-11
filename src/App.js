@@ -43,8 +43,15 @@ class App extends Component {
   };
   handleEdit = (id) => {
     const filteredItems = this.state.items.filter((item) => item.id !== id);
+    const selectedItem = this.state.items.find((item) => item.id === id);
+
+    console.log(selectedItem);
+
     this.setState({
-      items: filteredItems
+      items: filteredItems,
+      item: selectedItem.title,
+      editItem: true,
+      id: id
     });
   };
   render() {
@@ -57,6 +64,7 @@ class App extends Component {
               item={this.state.item}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
+              editItem={this.state.editItem}
             />
             <TodoList
               handleEdit={this.handleEdit}
