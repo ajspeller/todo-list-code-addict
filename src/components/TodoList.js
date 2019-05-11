@@ -3,12 +3,18 @@ import TodoItem from './TodoItem';
 
 export default class TodoList extends Component {
   render() {
-    const { items, clearList } = this.props;
+    const { items, clearList, handleDelete } = this.props;
     return (
       <ul className='list-group mt-5'>
         <h3 className='text-capitalize text-center'>todo list</h3>
         {items.map((item) => {
-          return <TodoItem key={item.id} title={item.title} />;
+          return (
+            <TodoItem
+              handleDelete={() => handleDelete(item.id)}
+              key={item.id}
+              title={item.title}
+            />
+          );
         })}
 
         <button
