@@ -6,8 +6,8 @@ export default class TodoItem extends Component {
     return (
       <li className='list-group-item text-capitalize d-flex justify-content-between my-2'>
         <h6>{title}</h6>
-        <div onClick={handleEdit} className='todo-icon'>
-          <span className='mx-2 text-success'>
+        <div className='todo-icon'>
+          <span onClick={handleEdit} className='mx-2 text-success'>
             <i className='fas fa-pen' />
           </span>
           <span onClick={handleDelete} className='mx-2 text-danger'>
